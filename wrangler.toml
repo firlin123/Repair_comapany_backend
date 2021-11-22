@@ -1,0 +1,20 @@
+name = "repair"
+# type = "javascript" is required to use the `[build]` section
+type = "javascript"
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+compatibility_date = "2021-11-22"
+kv_namespaces = [
+  { binding = "RepairUsers", id = "8d5669e730ef446bb533d30d43dc38c2", preview_id = "8d5669e730ef446bb533d30d43dc38c2" },
+  { binding = "RepairSessions", id = "c4ca374f680249a488526e902c39dec8", preview_id = "c4ca374f680249a488526e902c39dec8" },
+  { binding = "RepairOrders", id = "d4e04186554c424d8fee0d334c559064", preview_id = "d4e04186554c424d8fee0d334c559064" },
+  { binding = "RepairOrdersDone", id = "5aed1f0df0684d5db821e5c7b34d51a8", preview_id = "5aed1f0df0684d5db821e5c7b34d51a8" }
+]
+
+[build]
+command = "npm install && npm run build"
+[build.upload]
+format = "modules"
+main = "./index.mjs"
